@@ -23,7 +23,7 @@ examples
 └── openloop    <-- Open Loop simulation using FMU based Linear Equation model
 └── notebook    <-- Jupyter base simulation example
 └── vscode      <-- VS Code integration examples
-graph           
+graph
 └── build/package
     └── report/     <-- Report tool
 licenses            <-- Third Party Licenses
