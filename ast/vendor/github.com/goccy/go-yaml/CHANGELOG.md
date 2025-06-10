@@ -1,4 +1,5 @@
-# 1.11.2 - 2023-09-15
+# Changelog
+## 1.11.2 - 2023-09-15
 
 ### Fix bugs
 
@@ -6,7 +7,7 @@
 - Fix handle of space at start or last ( #376 )
 - Fix sequence with comment ( #390 )
 
-# 1.11.1 - 2023-09-14
+## 1.11.1 - 2023-09-14
 
 ### Fix bugs
 
@@ -15,13 +16,13 @@
 - Skip encoding an inline field if it is null ( #386 )
 - Fix comment parsing with null value ( #388 )
 
-# 1.11.0 - 2023-04-03
+## 1.11.0 - 2023-04-03
 
 ### Features
 
 - Supports dynamically switch encode and decode processing for a given type
 
-# 1.10.1 - 2023-03-28
+## 1.10.1 - 2023-03-28
 
 ### Features
 
@@ -33,7 +34,7 @@
 - Don't trim all space characters in block style sequence
 - Support strings starting with `@`
 
-# 1.10.0 - 2023-03-01
+## 1.10.0 - 2023-03-01
 
 ### Fix bugs
 
@@ -41,7 +42,7 @@ Reversible conversion of comments was not working in various cases, which has be
 **Breaking Change** exists in the comment map interface. However, if you are dealing with CommentMap directly, there is no problem.
 
 
-# 1.9.8 - 2022-12-19
+## 1.9.8 - 2022-12-19
 
 ### Fix feature
 
@@ -53,7 +54,7 @@ Reversible conversion of comments was not working in various cases, which has be
 - Fix behavior when struct fields conflicted( #335 )
 - Fix position calculation for literal, folded and raw folded strings ( #330 )
 
-# 1.9.7 - 2022-12-03
+## 1.9.7 - 2022-12-03
 
 ### Fix bugs
 
