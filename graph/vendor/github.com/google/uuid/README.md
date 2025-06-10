@@ -13,7 +13,7 @@ change is the ability to represent an invalid UUID (vs a NIL UUID).
 go get github.com/google/uuid
 ```
 
-## Documentation 
+## Documentation
 [![Go Reference](https://pkg.go.dev/badge/github.com/google/uuid.svg)](https://pkg.go.dev/github.com/google/uuid)
 
 Full `go doc` style documentation for the package can be viewed online without
