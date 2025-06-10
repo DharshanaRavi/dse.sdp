@@ -109,7 +109,7 @@ In particular these scenarios exist:
 > Hint: Start the Codespace in a Web Browser first, then connect to the running Codespace from VS Code.
 
 1. Start VS Code, refresh the Remote Explorer, select Github Codespaces (from the dropdown).
-2. Add a Codespace for the repo; https://github.com/boschglobal/dse.sdp ; you will need to authenticate the connection to GitHub and the Repo.
+2. Add a Codespace for the repo; [boschglobal/dse.sdp](https://github.com/boschglobal/dse.sdp) ; you will need to authenticate the connection to GitHub and the Repo.
 3. Connect to the Codespace.
 4. Open a Terminal.
 
@@ -264,7 +264,7 @@ After that, the container will build ... and eventually you will have the Codesp
 
 ### Proxy Setup when running _inside_ a DevContainer
 
-https://docs.docker.com/engine/cli/proxy/
+[proxy setup](https://docs.docker.com/engine/cli/proxy/)
 
 ~/git/working/dse.sdp$ cat ~/.docker/config.json
 
