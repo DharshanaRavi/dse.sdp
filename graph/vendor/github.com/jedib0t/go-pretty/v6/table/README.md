@@ -360,7 +360,7 @@ global properties/styles using the `SetColumnConfig()` interface:
     })
 ```
 
-## Render As ...
+## Render As
 
 Tables can be rendered in other common formats such as:
 

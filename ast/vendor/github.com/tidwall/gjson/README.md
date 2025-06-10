@@ -23,10 +23,9 @@ This README is a quick overview of how to use GJSON, for more information check 
 
 GJSON is also available for [Python](https://github.com/volans-/gjson-py) and [Rust](https://github.com/tidwall/gjson.rs)
 
-Getting Started
-===============
+## Getting Started
 
-## Installing
+### Installing
 
 To start using GJSON, install Go and run `go get`:
 
@@ -84,7 +83,7 @@ The dot and wildcard characters can be escaped with '\\'.
   ]
 }
 ```
-```
+```text
 "name.last"          >> "Anderson"
 "age"                >> 37
 "children"           >> ["Sara","Alex","Jack"]
@@ -102,7 +101,7 @@ matches with `#(...)#`. Queries support the `==`, `!=`, `<`, `<=`, `>`, `>=`
 comparison operators and the simple pattern matching `%` (like) and `!%`
 (not like) operators.
 
-```
+```text
 friends.#(last=="Murphy").first    >> "Dale"
 friends.#(last=="Murphy")#.first   >> ["Dale","Jane"]
 friends.#(age>45)#.last            >> ["Craig","Murphy"]
@@ -123,7 +122,7 @@ Arrays and Objects are returned as their raw json types.
 
 The `Result` type holds one of these:
 
-```
+```text
 bool, for JSON booleans
 float64, for JSON numbers
 string, for JSON string literals
@@ -196,7 +195,7 @@ This is useful for getting results from a modified query.
 For example, using the built-in `@reverse` modifier on the above json document,
 we'll get `children` array and reverse the order:
 
-```
+```text
 "children|@reverse"           >> ["Jack","Alex","Sara"]
 "children|@reverse|0"         >> "Jack"
 ```
@@ -224,7 +223,7 @@ document or just characters.
 
 For example, the `@pretty` modifier takes a json object as its argument.
 
-```
+```json
 @pretty:{"sortKeys":true}
 ```
 
@@ -266,7 +265,7 @@ gjson.AddModifier("case", func(json, arg string) string {
 })
 ```
 
-```
+```text
 "children|@case:upper"           >> ["SARA","ALEX","JACK"]
 "children|@case:lower|@reverse"  >> ["jack","alex","sara"]
 ```
@@ -277,14 +276,14 @@ There's support for [JSON Lines](http://jsonlines.org/) using the `..` prefix, w
 
 For example:
 
-```
+```json
 {"name": "Gilbert", "age": 61}
 {"name": "Alexa", "age": 34}
 {"name": "May", "age": 57}
 {"name": "Deloise", "age": 44}
 ```
 
-```
+```text
 ..#                   >> 4
 ..1                   >> {"name": "Alexa", "age": 34}
 ..3                   >> {"name": "Deloise", "age": 44}

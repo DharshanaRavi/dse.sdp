@@ -8,12 +8,12 @@ code.google.com/p/go-uuid).  It differs from these earlier packages in that
 a UUID is a 16 byte array rather than a byte slice.  One loss due to this
 change is the ability to represent an invalid UUID (vs a NIL UUID).
 
-###### Install
+## Install
 ```sh
 go get github.com/google/uuid
 ```
 
-###### Documentation
+## Documentation
 [![Go Reference](https://pkg.go.dev/badge/github.com/google/uuid.svg)](https://pkg.go.dev/github.com/google/uuid)
 
 Full `go doc` style documentation for the package can be viewed online without

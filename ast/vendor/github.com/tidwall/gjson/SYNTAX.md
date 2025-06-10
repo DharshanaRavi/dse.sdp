@@ -266,7 +266,7 @@ A modifier may accept an optional argument. The argument can be a valid JSON pay
 
 For example, the `@pretty` modifier takes a json object as its argument.
 
-```
+```json
 @pretty:{"sortKeys":true}
 ```
 
