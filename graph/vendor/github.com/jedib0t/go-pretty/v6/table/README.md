@@ -3,44 +3,44 @@
 
 Pretty-print tables into ASCII/Unicode strings.
 
-  - Add Rows one-by-one or as a group (`AppendRow`/`AppendRows`)
-  - Add Header(s) and Footer(s) (`AppendHeader`/`AppendFooter`)
-  - Add a Separator manually after any Row (`AppendSeparator`)
-  - Auto Index Rows (1, 2, 3 ...) and Columns (A, B, C, ...) (`SetAutoIndex`)
-  - Auto Merge (_not supported in CSV/Markdown/TSV modes_)
-    - Cells in a Row (`RowConfig.AutoMerge`)
-    - Columns (`ColumnConfig.AutoMerge`) (_not supported in HTML mode_)
-  - Limit the length of
-    - Rows (`SetAllowedRowLength`)
-    - Columns (`ColumnConfig.Width*`)
-  - Auto-size Rows (`Style().Size.WidthMin` and `Style().Size.WidthMax`)
-  - Page results by a specified number of Lines (`SetPageSize`)
-  - Alignment - Horizontal & Vertical
-    - Auto (horizontal) Align (numeric columns aligned Right)
-    - Custom (horizontal) Align per column (`ColumnConfig.Align*`)
-    - Custom (vertical) VAlign per column with multi-line cell support (`ColumnConfig.VAlign*`)
-  - Mirror output to an `io.Writer` (ex. `os.StdOut`) (`SetOutputMirror`)
-  - Sort by one or more Columns (`SortBy`)
-  - Suppress/hide columns with no content (`SuppressEmptyColumns`) 
-  - Suppress trailing spaces in the last column (`SupressTrailingSpaces`) 
-  - Customizable Cell rendering per Column (`ColumnConfig.Transformer*`)
-  - Hide any columns that you don't want displayed (`ColumnConfig.Hidden`)
-  - Reset Headers/Rows/Footers at will to reuse the same Table Writer (`Reset*`)
-  - Completely customizable styles (`SetStyle`/`Style`)
-    - Many ready-to-use styles: [style.go](style.go)
-    - Colorize Headers/Body/Footers using [../text/color.go](../text/color.go)
-    - Custom text-case for Headers/Body/Footers
-    - Enable separators between each row
-    - Render table without a Border
-    - and a lot more...
-  - Render as:
-    - (ASCII/Unicode) Table
-    - CSV
-    - HTML Table (with custom CSS Class)
-    - Markdown Table
-    - TSV
+- Add Rows one-by-one or as a group (`AppendRow`/`AppendRows`)
+- Add Header(s) and Footer(s) (`AppendHeader`/`AppendFooter`)
+- Add a Separator manually after any Row (`AppendSeparator`)
+- Auto Index Rows (1, 2, 3 ...) and Columns (A, B, C, ...) (`SetAutoIndex`)
+- Auto Merge (_not supported in CSV/Markdown/TSV modes_)
+- Cells in a Row (`RowConfig.AutoMerge`)
+- Columns (`ColumnConfig.AutoMerge`) (_not supported in HTML mode_)
+- Limit the length of
+- Rows (`SetAllowedRowLength`)
+- Columns (`ColumnConfig.Width*`)
+- Auto-size Rows (`Style().Size.WidthMin` and `Style().Size.WidthMax`)
+- Page results by a specified number of Lines (`SetPageSize`)
+- Alignment - Horizontal & Vertical
+- Auto (horizontal) Align (numeric columns aligned Right)
+- Custom (horizontal) Align per column (`ColumnConfig.Align*`)
+- Custom (vertical) VAlign per column with multi-line cell support (`ColumnConfig.VAlign*`)
+- Mirror output to an `io.Writer` (ex. `os.StdOut`) (`SetOutputMirror`)
+- Sort by one or more Columns (`SortBy`)
+- Suppress/hide columns with no content (`SuppressEmptyColumns`)
+- Suppress trailing spaces in the last column (`SupressTrailingSpaces`)
+- Customizable Cell rendering per Column (`ColumnConfig.Transformer*`)
+- Hide any columns that you don't want displayed (`ColumnConfig.Hidden`)
+- Reset Headers/Rows/Footers at will to reuse the same Table Writer (`Reset*`)
+- Completely customizable styles (`SetStyle`/`Style`)
+- Many ready-to-use styles: [style.go](style.go)
+- Colorize Headers/Body/Footers using [../text/color.go](../text/color.go)
+- Custom text-case for Headers/Body/Footers
+- Enable separators between each row
+- Render table without a Border
+- and a lot more...
+- Render as:
+- (ASCII/Unicode) Table
+- CSV
+- HTML Table (with custom CSS Class)
+- Markdown Table
+- TSV
 
-```
+```text
 +---------------------------------------------------------------------+
 | Game of Thrones                                                     +
 +-----+------------+-----------+--------+-----------------------------+
@@ -64,7 +64,7 @@ by unit-tests and that they print the table rendered. Run
 `go test -v github.com/jedib0t/go-pretty/v6/table` to see the test outputs and
 help you figure out how to do something.
 
-# Examples
+## Examples
 
 All the examples below are going to start with the following block, although
 nothing except a single Row is mandatory for the `Render()` function to render
@@ -93,7 +93,7 @@ func main() {
 }
 ```
 Running the above will result in:
-```
+```text
 +-----+------------+-----------+--------+-----------------------------+
 |   # | FIRST NAME | LAST NAME | SALARY |                             |
 +-----+------------+-----------+--------+-----------------------------+
@@ -121,7 +121,7 @@ good. Set or Change the style using:
     t.Render()
 ```
 to get:
-```
+```text
 ┌─────┬────────────┬───────────┬────────┬─────────────────────────────┐
 │   # │ FIRST NAME │ LAST NAME │ SALARY │                             │
 ├─────┼────────────┼───────────┼────────┼─────────────────────────────┤
@@ -231,7 +231,7 @@ it specifically for each row/column using `RowConfig` or `ColumnConfig`.
     fmt.Println(t.Render())
 ```
 to get:
-```
+```text
 ┌───┬─────────┬────────┬───────────┬───────────┬───────────┐
 │   │ NODE IP │ PODS   │ NAMESPACE │ CONTAINER │    RCE    │
 │   │         │        │           │           ├─────┬─────┤
@@ -264,7 +264,7 @@ can handle rows with multiple lines too. Here is a simple example:
     t.Render()
 ```
 to get:
-```
+```text
 +-----+------------+-----------+--------+-----------------------------+
 |   # | FIRST NAME | LAST NAME | SALARY |                             |
 +-----+------------+-----------+--------+-----------------------------+
@@ -297,8 +297,8 @@ rows be sorted first by "First Name" and then by "Last Name" (in case of similar
 "First Name" entries).
 ```golang
     t.SortBy([]table.SortBy{
-	    {Name: "First Name", Mode: table.Asc},
-	    {Name: "Last Name", Mode: table.Asc},
+        {Name: "First Name", Mode: table.Asc},
+        {Name: "Last Name", Mode: table.Asc},
     })
 ```
 
@@ -310,7 +310,7 @@ You can restrict the maximum (text) width for a Row:
     t.Render()
 ```
 to get:
-```
+```text
 +-----+------------+-----------+--------+------- ~
 |   # | FIRST NAME | LAST NAME | SALARY |        ~
 +-----+------------+-----------+--------+------- ~
@@ -370,7 +370,7 @@ Tables can be rendered in other common formats such as:
     t.RenderCSV()
 ```
 to get:
-```
+```csv
 ,First Name,Last Name,Salary,
 1,Arya,Stark,3000,
 20,Jon,Snow,2000,"You know nothing\, Jon Snow!"

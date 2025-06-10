@@ -68,7 +68,7 @@ $ jsonmerge -h
 ```
 
 ## Development
-```
+```bash
 # Install depencencies
 ./init.sh
 

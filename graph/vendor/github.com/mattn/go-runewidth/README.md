@@ -24,4 +24,4 @@ Yasuhiro Matsumoto
 License
 -------
 
-under the MIT License: http://mattn.mit-license.org/2013
+under the MIT License: [http://mattn.mit-license.org/2013](http://mattn.mit-license.org/2013)

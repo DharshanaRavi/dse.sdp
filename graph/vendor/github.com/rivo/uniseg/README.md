@@ -66,7 +66,7 @@ This is the most convenient method of iterating over grapheme clusters:
 ```go
 gr := uniseg.NewGraphemes("👍🏼!")
 for gr.Next() {
-	fmt.Printf("%x ", gr.Runes())
+    fmt.Printf("%x ", gr.Runes())
 }
 // [1f44d 1f3fc] [21]
 ```
@@ -80,8 +80,8 @@ str := "🇩🇪🏳️‍🌈"
 state := -1
 var c string
 for len(str) > 0 {
-	c, str, _, state = uniseg.StepString(str, state)
-	fmt.Printf("%x ", []rune(c))
+    c, str, _, state = uniseg.StepString(str, state)
+    fmt.Printf("%x ", []rune(c))
 }
 // [1f1e9 1f1ea] [1f3f3 fe0f 200d 1f308]
 ```
@@ -95,8 +95,8 @@ str := "Hello, world!"
 state := -1
 var c string
 for len(str) > 0 {
-	c, str, state = uniseg.FirstWordInString(str, state)
-	fmt.Printf("(%s)\n", c)
+    c, str, state = uniseg.FirstWordInString(str, state)
+    fmt.Printf("(%s)\n", c)
 }
 // (Hello)
 // (,)
@@ -122,7 +122,7 @@ fmt.Println(uniseg.ReverseString("🇩🇪🏳️‍🌈"))
 
 ## Documentation
 
-Refer to https://pkg.go.dev/github.com/rivo/uniseg for the package's documentation.
+[Documentation](https://pkg.go.dev/github.com/rivo/uniseg) for the package's documentation.
 
 ## Dependencies
 

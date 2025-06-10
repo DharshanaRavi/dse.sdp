@@ -327,7 +327,7 @@ You would use the path "programmers.#.lastName" like such:
 ```go
 result := gjson.Get(json, "programmers.#.lastName")
 for _, name := range result.Array() {
-	println(name.String())
+  println(name.String())
 }
 ```
 
@@ -348,8 +348,8 @@ Returning `false` from an iterator will stop iteration.
 ```go
 result := gjson.Get(json, "programmers")
 result.ForEach(func(key, value gjson.Result) bool {
-	println(value.String())
-	return true // keep iterating
+  println(value.String())
+  return true // keep iterating
 })
 ```
 
@@ -372,14 +372,14 @@ Sometimes you just want to know if a value exists.
 ```go
 value := gjson.Get(json, "name.last")
 if !value.Exists() {
-	println("no last name")
+  println("no last name")
 } else {
-	println(value.String())
+  println(value.String())
 }
 
 // Or as one step
 if gjson.Get(json, "name.last").Exists() {
-	println("has a last name")
+  println("has a last name")
 }
 ```
 
@@ -391,7 +391,7 @@ If you are consuming JSON from an unpredictable source then you may want to vali
 
 ```go
 if !gjson.Valid(json) {
-	return errors.New("invalid json")
+  return errors.New("invalid json")
 }
 value := gjson.Get(json, "name.last")
 ```
@@ -403,7 +403,7 @@ To unmarshal to a `map[string]interface{}`:
 ```go
 m, ok := gjson.Parse(json).Value().(map[string]interface{})
 if !ok {
-	// not a map
+  // not a map
 }
 ```
 
@@ -439,7 +439,7 @@ Benchmarks of GJSON alongside [encoding/json](https://golang.org/pkg/encoding/js
 [jsonparser](https://github.com/buger/jsonparser),
 and [json-iterator](https://github.com/json-iterator/go)
 
-```
+```text
 BenchmarkGJSONGet-10             17893731    202.1 ns/op      0 B/op     0 allocs/op
 BenchmarkGJSONUnmarshalMap-10     1663548   2157 ns/op     1920 B/op    26 allocs/op
 BenchmarkJSONUnmarshalMap-10       832236   4279 ns/op     2920 B/op    68 allocs/op
@@ -483,7 +483,7 @@ JSON document used:
 
 Each operation was rotated through one of the following search paths:
 
-```
+```text
 widget.window.name
 widget.image.hOffset
 widget.text.onMouseUp
