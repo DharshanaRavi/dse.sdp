@@ -15,7 +15,6 @@
     ],
     "remoteEnv": {},
     "onCreateCommand": [],
-    "postCreateCommand": "make && make install",
     "forwardPorts": [3001],
     "portsAttributes": {
         "2159": {
